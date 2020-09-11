@@ -5,32 +5,70 @@
 # movimento dividir por letras
 # loop for letras com as funicções de movimento
 
+
+#Class submarine, with position parameters
 class Submarino:
-    def _init_(self, x=False, y=False, z=False, direction=False):
+    def __init__(self, x=False, y=False, z=False, direction=False):
         self.x, self.y, self.z, self.direction = int(x),int(y), int(z), str(direction)
         self.x, self.y, self.z, self.direction = 0, 0, 0, 'NORTE'
 
-s1 = Submarino()
+command = 'LLMLRMMUMUD'
 
-print(f'{s1.x} {s1.y} {s1.z} {s1.direction}')
 
+# Receive command and split it into a list
+def command_func():
+    command = input('Insira o comando para o submarino: ')
+    def split(command):
+        return [char for char in command]
+    split(command)
+    return split(command)
+
+command_func()
+command = command_func()
+command
+
+
+split(command)
+
+# Print Submarine class initial position
+vars(Submarino())
+
+
+# Print first submarine initial position
+submarino = Submarino()
+print(f'Posição inicial do submarino: {submarino.x} {submarino.y} {submarino.z} {submarino.direction}')
+
+
+#############################################
+class DecoratorExample:
+  """ Example Class """
+  def __init__(self):
+    """ Example Setup """
+    print('Hello, World!')
+    self.name = 'Decorator_Example'
+  def example_function(self):
+    """ This method is an instance method! """
+    print('I\'m an instance method!')
+    print('My name is ' + self.name)
+de = DecoratorExample()
+de.example_function()    
     
-    
-    def moviment():
-        x_mov = x + x_mov
-        x_mov = x + x_mov 
-        x_mov = x + x_mov 
-        direction_mov = 
+#     def moviment():
+#         x_mov = x + x_mov
+#         x_mov = x + x_mov 
+#         x_mov = x + x_mov 
+#         direction_mov = 
 
-x = 1
+# x = 1
 #############################################
 
-    def split(comando):
-        return [char for char in comando]
+#Split comand string into chars in a list
+    def split(command):
+        return [char for char in command]
     
-        def movimento(comando):
-            comando = split(comando)
-            for i in comando:
+        def movimento(command):
+            command = split(command)
+            for i in command:
                 if i == 'R':
                     x = x+1
                     print(x)
@@ -38,21 +76,21 @@ x = 1
                     print('no move')
 
     
-    comando = 'rsa'
-    print(split(comando)) 
-    comando = split(comando)
+    command = 'rsa'
+    print(split(command)) 
+    command = split(command)
 
-    for char in comando:
+    for char in command:
         if i == 'r'
 
 #############################################
-def split(comando):
-        return [char for char in comando]
+def split(command):
+        return [char for char in command]
 
-comando = input()
+command = input()
 
-comando = split(comando)
-print(split(comando)) 
+command = split(command)
+print(split(command)) 
 
 list = ['L', 'R', 'R']
 x=1
