@@ -1,7 +1,8 @@
 
 .idea/
-
+env/
 .settings/
 .loadpath
 .project
 .classpath
+env/Scripts/pip.exe
