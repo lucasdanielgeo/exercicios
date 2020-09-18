@@ -14,6 +14,47 @@ def command_function():
 submarine = Submarino()
 print('Your submarine is initialized!')
 
+
+# Essa função retorna o valor correspondente a direção do submarino
+## 1 = NORTE
+## 2 = LESTE
+## 3 = SUL
+## 4 = OESTE
+def direction_mov_condition(direction):
+    direction = int(direction)
+    if direction <= 4:
+        direction
+    if direction >= 100:
+        direction = str(direction)
+        def split(direction):
+            return [char for char in direction]
+        direction_list = split(direction)
+        direction_list = direction_list[-2]+direction_list[-1]
+        direction = int(direction_list)
+    if direction > 4:
+        while direction > 4:
+            direction -= 4
+        else:
+            pass
+    ## Se a soma da diração for menor que 100, pegue apenas os dois ultimos digítos
+    if direction <= -100:
+        direction = str(direction)
+        def split(direction):
+            return [char for char in direction]
+        direction_list = split(direction)
+        direction_list = direction_list[0]+direction_list[-2]+direction_list[-1]
+        direction = int(direction_list)
+    ## Se a soma da direção for menor que 1, some 4
+        while direction < 1:
+    if direction < 1:
+            direction += 4
+        else:
+            pass
+    return direction
+
+
+
+
 def menu():
     # 1. Create submarine
     # 2. Print initial position

@@ -46,7 +46,7 @@ Os cientistas mandarão os comandos agrupados em uma única linha, como no exemp
 ```
 LMRDDMMUU
 ```
-x+1 x+1 x-1 z-1 z-1 y+1 y+1 z+1 z+1 NORTE
+Leste > m > norte > down > down > m > m > up > up
 1 2 0 NORTE
 
 ## Saída:
