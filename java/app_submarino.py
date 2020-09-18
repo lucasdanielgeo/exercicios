@@ -62,6 +62,7 @@ def menu():
     1. Print initial position
     2. Send a command
     3. Print actual position
+    4. Reset submarine position
     ''')
     # if command_menu == 1:
     #     submarine = Submarino()
@@ -78,6 +79,7 @@ def menu():
             print(f'Submarine initial position: {submarine.x} {submarine.y} {submarine.z} {submarine.direction}')
         else:
             print(f'Actual submarine position: {submarine.x} {submarine.y} {submarine.z} {submarine.direction}')
+            menu()
     else:
         print('Can\'t find command, please  follow next instructions')
         menu()
