@@ -27,7 +27,7 @@ Para simplificar, leve em consideração que o submarino sempre começará no po
 
 direcao inicial = NORTE
 Se L: direcao -1
-Se R: direcao -1
+Se R: direcao +1
 Se U: z = z+1
 Se D: z = z-1
 Se M + NORTE: +1 eixo Y
@@ -36,8 +36,8 @@ Se M + OESTE: -1 eixo X
 Se M + SUL: -1 eixo Y
 
 Se commando = LLM
-então x=x+1 e direção = OESTE + x= x+1 e direção SUL + Se direção = SUL então y = y-1 
-commando é igual a 2 -1 0 SUL
+direção = OESTE depois direção SUL + Se direção = SUL então y = y-1 
+commando é igual a 0 -1 0 SUL
 
 
 ## Entrada:
