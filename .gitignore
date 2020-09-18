@@ -6,3 +6,4 @@ env/
 .project
 .classpath
 env/Scripts/pip.exe
+.vscode/settings.json
