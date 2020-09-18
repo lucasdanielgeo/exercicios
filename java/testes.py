@@ -145,17 +145,22 @@ s1 = Submarino("Jubileu")
 # x = 0
 # right_mov
 
-while  'M':
+for i in range (1, 5):
+    print (i)
+    if 1 + 1:
+
+def sum(a=False, b=False):
+    return a + b
+
+sum(1,2)    
+
+while  x <= 4:
     x
 if x > 4:
 
 direction = 16
 
-# Essa função retorna o valor correspondente a direção do submarino
-## 1 = NORTE
-## 2 = LESTE
-## 3 = SUL
-## 4 = OESTE
+# Essa função estabelece o valor correspondente a direção do submarino
 def direction_mov_condition(direction):
     direction = int(direction)
     if direction <= 4:
@@ -172,7 +177,6 @@ def direction_mov_condition(direction):
             direction -= 4
         else:
             pass
-    ## Se a soma da diração for menor que 100, pegue apenas os dois ultimos digítos
     if direction <= -100:
         direction = str(direction)
         def split(direction):
@@ -180,18 +184,17 @@ def direction_mov_condition(direction):
         direction_list = split(direction)
         direction_list = direction_list[0]+direction_list[-2]+direction_list[-1]
         direction = int(direction_list)
-    ## Se a soma da direção for menor que 1, some 4
-        while direction < 1:
     if direction < 1:
+        while direction < 1:
             direction += 4
         else:
             pass
     return direction
 
 # teste para valores negativos
-# for i in range(-15, -0):
-#     direction_mov_condition(i)
-#     print(i)
+for i in range(-15, -0):
+    direction_mov_condition(i)
+    print(i)
 
 
 # teste para direction_mov_condition()

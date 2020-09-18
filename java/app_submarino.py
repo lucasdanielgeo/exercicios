@@ -3,6 +3,7 @@ class Submarino:
         self.x, self.y, self.z, self.direction = int(x),int(y), int(z), str(direction)
         self.x, self.y, self.z, self.direction = 0, 0, 0, 'NORTE'
 
+# Essa função retorna o comando
 def command_function():
     def split(command):
         return [char for char in command]
@@ -36,7 +37,6 @@ def direction_mov_condition(direction):
             direction -= 4
         else:
             pass
-    ## Se a soma da diração for menor que 100, pegue apenas os dois ultimos digítos
     if direction <= -100:
         direction = str(direction)
         def split(direction):
@@ -44,17 +44,15 @@ def direction_mov_condition(direction):
         direction_list = split(direction)
         direction_list = direction_list[0]+direction_list[-2]+direction_list[-1]
         direction = int(direction_list)
-    ## Se a soma da direção for menor que 1, some 4
-        while direction < 1:
     if direction < 1:
+        while direction < 1:
             direction += 4
         else:
             pass
     return direction
 
 
-
-
+# Menu da aplicação
 def menu():
     # 1. Create submarine
     # 2. Print initial position
@@ -83,5 +81,5 @@ def menu():
     else:
         print('Can\'t find command, please  follow next instructions')
         menu()
-#menu()
+menu()
         
