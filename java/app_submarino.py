@@ -22,24 +22,18 @@ def get_next_direction(direction_list, current_direction_position):
     i = direction_list.index(current_direction_position)
     return[direction_list[(i + 1) % len(direction_list)]]
 
-get_previous_direction(direction_list, sub.direction)
+# get_previous_direction(direction_list, sub.direction)
 
 # Essa função retorna o comando
 def input_command_string_parser():
     def split(command):
         return [char for char in command]
     command = input('Send a commmand to the submarine: ')
+    command = command.upper()
     command = split(command)
     return command
 
-command = input_command_string_parser()
-command
-
-for commands in command:
-    print(commands)
-
-
-def command_start(command, Submarino):
+def do_command(command, Submarino):
     for commands in command:
         if command[commands] == 'M' and Submarino.direction == 'NORTE':
             Submarino.y += 1
@@ -57,7 +51,10 @@ def command_start(command, Submarino):
             pass
     return Submarino
 
-command_start(command, sub)
+command = input_command_string_parser()
+
+sub = do_command(command, sub)
+print(f'Submarine initial position: {sub.x} {sub.y} {sub.z} {sub.direction}')
 
 
 # input_command_string_parser()
@@ -65,19 +62,6 @@ submarine = Submarino()
 print('Your submarine is initialized!')
 
 
-
-def get_direction(Submarino):
-    def previous(direction_list, current_direction_position):
-        i = direction_list.index(current_direction_position)
-        return [direction_list[i - 1]]
-
-    print(previous(direction_list, 'NORTE'))
-
-    def next(direction_list, current_direction_position):
-        i = direction_list.index(current_direction_position)
-        return[direction_list[(i + 1) % len(direction_list)]]
-
-    print (next(direction_list, 'NORTE'))
 
 submarine = Submarino()
 get_direction(submarine)

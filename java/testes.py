@@ -122,104 +122,21 @@ x=1
 x, y, z = int(x), int(y), int(z), str(d_mov)
 x, y, z, d_mov = 1, 2, 3, 'NORTE'
 
-
-
-
-
-
-for i in list:
-    if i == 'R':
-        x = x+1
-        print(x)
-    elif i == 'L':
-        x = x-1
-    else:
-        False
-
 #############################################
 
-# r_mov = 'R'
-# l_mov = 'L'
-# u_mov = 'U'
-# d_mov = 'D'
+def get_direction(Submarino):
+    def previous(direction_list, current_direction_position):
+        i = direction_list.index(current_direction_position)
+        return [direction_list[i - 1]]
 
-r_mov, l_mov, u_mov, d_mov = 'R', 'L','U','D'
+    print(previous(direction_list, 'NORTE'))
 
-x = 1
-if r_mov == 'R':
-    x = x+1
-else:
-    print('no move')
-    
-    
-    # def moviment(x, y_mov, z_mov, direction_mov):
-    #     x_mov = x + x_mov
-    #     x_mov = x + x_mov 
-    #     x_mov = x + x_mov 
-    #     direction_mov = 
-    
-    def left_mov():
-        'R','L' = x-1, x+1
+    def next(direction_list, current_direction_position):
+        i = direction_list.index(current_direction_position)
+        return[direction_list[(i + 1) % len(direction_list)]]
 
+    print (next(direction_list, 'NORTE'))
 
-s1 = Submarino("Jubileu")
-
-
-# right_mov = x+1
-# right_mov = int(1)
-# x = 0
-# right_mov
-
-for i in range (1, 5):
-    print (i)
-    if 1 + 1:
-
-def sum(a=False, b=False):
-    return a + b
-
-sum(1,2)    
-
-while  x <= 4:
-    x
-if x > 4:
-
-direction = 16
-
-# Essa função estabelece o valor correspondente a direção do submarino
-def direction_mov_condition(direction):
-    direction = int(direction)
-    if direction <= 4:
-        direction
-    if direction >= 100:
-        direction = str(direction)
-        def split(direction):
-            return [char for char in direction]
-        direction_list = split(direction)
-        direction_list = direction_list[-2]+direction_list[-1]
-        direction = int(direction_list)
-    if direction > 4:
-        while direction > 4:
-            direction -= 4
-        else:
-            pass
-    if direction <= -100:
-        direction = str(direction)
-        def split(direction):
-            return [char for char in direction]
-        direction_list = split(direction)
-        direction_list = direction_list[0]+direction_list[-2]+direction_list[-1]
-        direction = int(direction_list)
-    if direction < 1:
-        while direction < 1:
-            direction += 4
-        else:
-            pass
-    return direction
-
-# teste para valores negativos
-for i in range(-15, -0):
-    direction_mov_condition(i)
-    print(i)
 
 
 #########################################################################
@@ -281,3 +198,14 @@ def test_direction_mov_condition_with_range():
 
 test_direction_mov_condition_with_range()
 #########################################################################
+# Comandos válidos
+
+valid_commands = ['L','R','U','D','M']
+
+commands = ['l','q']
+
+for valid_command, command in valid_commands, commands:
+    if command != valid_command:
+        print('Please, input a valid command')
+# command = input_command_string_parser()
+print('Please, input a valid command /'L/' ')
