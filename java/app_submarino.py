@@ -1,55 +1,86 @@
 class Submarino:
     def __init__(self, x=False, y=False, z=False, direction=False):
+        direction_list = ['NORTE','LESTE','SUL','OESTE']
         self.x, self.y, self.z, self.direction = int(x),int(y), int(z), str(direction)
-        self.x, self.y, self.z, self.direction = 0, 0, 0, 'NORTE'
+        self.x, self.y, self.z, self.direction = 0, 0, 0, direction_list[0]
+    
+    direction_list = ['NORTE','LESTE','SUL','OESTE']
+    
+direction_list = Submarino().direction_list
+
+
+# input_command_string_parser()
+sub = Submarino()
+print('Your submarine is initialized!')
+
+
+def get_previous_direction(direction_list, current_direction_position):
+    i = direction_list.index(current_direction_position)
+    return [direction_list[i - 1]]
+
+def get_next_direction(direction_list, current_direction_position):
+    i = direction_list.index(current_direction_position)
+    return[direction_list[(i + 1) % len(direction_list)]]
+
+get_previous_direction(direction_list, sub.direction)
 
 # Essa função retorna o comando
-def command_function():
+def input_command_string_parser():
     def split(command):
         return [char for char in command]
     command = input('Send a commmand to the submarine: ')
     command = split(command)
     return command
 
-# command_function()
+command = input_command_string_parser()
+command
+
+for commands in command:
+    print(commands)
+
+
+def command_start(command, Submarino):
+    for commands in command:
+        if command[commands] == 'M' and Submarino.direction == 'NORTE':
+            Submarino.y += 1
+        elif command[commands] == 'M' and Submarino.direction == 'SUL':
+            Submarino.y -= 1
+        elif command[commands] == 'M' and Submarino.direction == 'LESTE':
+            Submarino.x += 1
+        elif command[commands] == 'M' and Submarino.direction == 'OESTE':
+            Submarino.x -= 1
+        elif command[commands] == 'L':
+            Submarino.direction = Submarino.get_previous_direction()
+        elif command[commands] == 'R':
+            Submarino = Submarino.get_next_direction()
+        else:
+            pass
+    return Submarino
+
+command_start(command, sub)
+
+
+# input_command_string_parser()
 submarine = Submarino()
 print('Your submarine is initialized!')
 
 
-# Essa função retorna o valor correspondente a direção do submarino
-## 1 = NORTE
-## 2 = LESTE
-## 3 = SUL
-## 4 = OESTE
-def direction_mov_condition(direction):
-    direction = int(direction)
-    if direction <= 4:
-        direction
-    if direction >= 100:
-        direction = str(direction)
-        def split(direction):
-            return [char for char in direction]
-        direction_list = split(direction)
-        direction_list = direction_list[-2]+direction_list[-1]
-        direction = int(direction_list)
-    if direction > 4:
-        while direction > 4:
-            direction -= 4
-        else:
-            pass
-    if direction <= -100:
-        direction = str(direction)
-        def split(direction):
-            return [char for char in direction]
-        direction_list = split(direction)
-        direction_list = direction_list[0]+direction_list[-2]+direction_list[-1]
-        direction = int(direction_list)
-    if direction < 1:
-        while direction < 1:
-            direction += 4
-        else:
-            pass
-    return direction
+
+def get_direction(Submarino):
+    def previous(direction_list, current_direction_position):
+        i = direction_list.index(current_direction_position)
+        return [direction_list[i - 1]]
+
+    print(previous(direction_list, 'NORTE'))
+
+    def next(direction_list, current_direction_position):
+        i = direction_list.index(current_direction_position)
+        return[direction_list[(i + 1) % len(direction_list)]]
+
+    print (next(direction_list, 'NORTE'))
+
+submarine = Submarino()
+get_direction(submarine)
 
 
 # Menu da aplicação
@@ -72,7 +103,7 @@ def menu():
         print(f'Submarine initial position: {submarine.x} {submarine.y} {submarine.z} {submarine.direction}')
         menu()
     elif command_menu == '2':
-        command = command_function()
+        command = input_command_string_parser()
         menu()     
     elif command_menu == '3':
         if submarine == Submarino():

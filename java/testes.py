@@ -15,6 +15,31 @@ class Submarino:
 command = 'LLMLRMMUMUD'
 
 
+direction_list = ['NORTE','LESTE','SUL','OESTE']
+
+def getPrevNext(l,no):
+    i = l.index(no)
+    return[l[i - 1]]
+
+print(getPrevNext(direction_list, 'NORTE'))
+
+
+
+direction_list = ['NORTE','LESTE','SUL','OESTE']
+
+def get_previous_direction(direction_list, current_direction_position):
+    i = direction_list.index(current_direction_position)
+    return [direction_list[i - 1]]
+
+print(get_previous_direction(direction_list, 'NORTE'))
+
+def get_next_direction(direction_list, current_direction_position):
+    i = direction_list.index(current_direction_position)
+    return[direction_list[(i + 1) % len(direction_list)]]
+
+print (get_next_direction(direction_list, 'NORTE'))
+
+
 # Receive command and split it into a list
 def command_func():
     command = input('Insira o comando para o submarino: ')
@@ -197,6 +222,62 @@ for i in range(-15, -0):
     print(i)
 
 
-# teste para direction_mov_condition()
-direction_mov_condition(-2)
+#########################################################################
+def direction_mov_condition(direction): # Essa função retorna o valor correspondente a direção do submarino
+    ## 1 = NORTE
+    ## 2 = LESTE
+    ## 3 = SUL
+    ## 4 = OESTE
+    direction = int(direction)
+    if direction <= 4:
+        direction
+    if direction >= 100:
+        direction = str(direction)
+        def split(direction):
+            return [char for char in direction]
+        direction_list = split(direction)
+        direction_list = direction_list[-2]+direction_list[-1]
+        direction = int(direction_list)
+    if direction > 4:
+        while direction > 4:
+            direction -= 4
+        else:
+            pass
+    if direction <= -100:
+        direction = str(direction)
+        def split(direction):
+            return [char for char in direction]
+        direction_list = split(direction)
+        direction_list = direction_list[0]+direction_list[-2]+direction_list[-1]
+        direction = int(direction_list)
+    if direction < 1:
+        while direction < 1:
+            direction += 4
+        else:
+            pass
+    return direction
 
+def test_direction_mov_condition():
+    l = [1, 4, 10, 20, 99, 100, 123456789123456784, 0, -1, -10, -100, -12945678945614]
+    for i in l:
+        print(direction_mov_condition(i))
+
+test_direction_mov_condition()
+
+
+import time
+
+def test_direction_mov_condition_with_range():
+    init_time = time.perf_counter()
+    for i in range (-10,10):
+        #print(i)
+        if direction_mov_condition(i) > 4:
+            print (f'Error! Out of range, {direction_mov_condition(i)}')
+        else:
+            print(direction_mov_condition(i))
+    final_time = time.perf_counter()
+    print(f'execution time of this test = {final_time-init_time}')
+
+
+test_direction_mov_condition_with_range()
+#########################################################################
