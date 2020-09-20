@@ -99,7 +99,7 @@ def menu():
         return create_submarine()
         menu()
     elif command_menu == '2':
-        return get_current_position()
+        return Submarino().get_current_position()
         menu()
     elif command_menu == '3':
         command = input_command_string_parser()
