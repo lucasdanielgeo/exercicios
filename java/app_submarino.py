@@ -4,20 +4,31 @@ class Submarino:
         self.x, self.y, self.z, self.direction = int(x),int(y), int(z), str(direction)
         self.x, self.y, self.z = 0, 0, 0, 
         self.direction = direction_list[0]
-    
+
     def get_current_position(Submarino):
         print(f'Current submarine position: {Submarino.x} {Submarino.y} {Submarino.z} {Submarino.direction}')
 
+    def get_previous_direction(direction_list, current_direction_position):
+        
+        i = direction_list.index(current_direction_position)
+        return [direction_list[i - 1]]
+
+    def get_next_direction(direction_list, current_direction_position):
+        i = direction_list.index(current_direction_position)
+        return[direction_list[(i + 1) % len(direction_list)]]
 
     direction_list = ['NORTE','LESTE','SUL','OESTE']
     
+
+
+
 direction_list = Submarino().direction_list
 
-def get_current_position(Submarino):
-    print(f'Submarine initial position: {Submarino.x} {Submarino.y} {Submarino.z} {Submarino.direction}')
+# def get_current_position(Submarino):
+#     print(f'Submarine initial position: {Submarino.x} {Submarino.y} {Submarino.z} {Submarino.direction}')
 
-def get_last_position(Submarino):
-    print(f'Actual submarine position: {submarine.x} {submarine.y} {submarine.z} {submarine.direction}')
+# def get_last_position(Submarino):
+#     print(f'Current submarine position: {submarine.x} {submarine.y} {submarine.z} {submarine.direction}')
 
 
 # input_command_string_parser()
@@ -26,17 +37,15 @@ def create_submarine():
     print('Your submarine is initialized!')
     return Submarino()
 
+# def get_previous_direction(direction_list, current_direction_position):
+#     i = direction_list.index(current_direction_position)
+#     return [direction_list[i - 1]]
+
+# def get_next_direction(direction_list, current_direction_position):
+#     i = direction_list.index(current_direction_position)
+#     return[direction_list[(i + 1) % len(direction_list)]]
 
 
-def get_previous_direction(direction_list, current_direction_position):
-    i = direction_list.index(current_direction_position)
-    return [direction_list[i - 1]]
-
-def get_next_direction(direction_list, current_direction_position):
-    i = direction_list.index(current_direction_position)
-    return[direction_list[(i + 1) % len(direction_list)]]
-
-# get_previous_direction(direction_list, sub.direction)
 
 # Essa função retorna o comando
 def input_command_string_parser():
@@ -45,6 +54,10 @@ def input_command_string_parser():
     command = input('Send a commmand to the submarine: ')
     command = command.upper()
     command = split(command)
+    return command
+
+def set_new_command_value(command):
+    command = input_command_string_parser()
     return command
 
 def do_command(command, Submarino):
@@ -64,10 +77,6 @@ def do_command(command, Submarino):
         else:
             pass
     return Submarino
-
-def set_new_command_value(command):
-    command = input_command_string_parser()
-    return command
 
 
 #sub = do_command(command, sub)
