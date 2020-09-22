@@ -209,3 +209,39 @@ for valid_command, command in valid_commands, commands:
         print('Please, input a valid command')
 # command = input_command_string_parser()
 print('Please, input a valid command /'L/' ')
+
+
+
+def menu():
+    # 1. Create Submarine 
+    # 2. Print initial position
+    # 3. Send a command
+    # 4. Print actual position
+    # 5. Reset submarine position
+    command_menu = input('''Choose an option and enter the number:
+    1. Create Submarine 
+    2. Print current position
+    3. Send a command
+    4. Reset submarine position
+    ''')
+    # if command_menu == 1:
+    #     submarine = Submarino()
+    #     print('Submarine succefuly created!')
+    #     menu()
+    if command_menu == '1':
+        sub1 = create_submarine()
+        menu()
+    elif command_menu == '2':
+        return Submarino().get_current_position(), menu()
+    elif command_menu == '3':
+        command = input('Send a command: ')
+        command = send_command(command)
+        return command
+          
+    elif command_menu == '4':
+        sub1 = create_submarine()
+        menu()
+    else:
+        print('Can\'t find this option, please  follow next instructions')
+        pass
+        
