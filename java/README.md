@@ -25,20 +25,6 @@ Você deve desenvolver um sistema que processe uma série de comandos e faça a 
 
 Para simplificar, leve em consideração que o submarino sempre começará no ponto (0, 0, 0, NORTE) e que todo movimento quando o submarino estiver apontada para o NORTE, somará 1 ao eixo Y, todo movimento quando o submarino estiver apontada para o LESTE somará 1 ao eixo X e todo movimento para baixo diminuirá 1 do eixo Z. Ah, vale lembrar que 0 no eixo Z é a superfície do oceano
 
-direcao inicial = NORTE
-Se L: direcao -1
-Se R: direcao +1
-Se U: z = z+1
-Se D: z = z-1
-Se M + NORTE: +1 eixo Y
-Se M + LESTE: +1 eixo X
-Se M + OESTE: -1 eixo X
-Se M + SUL: -1 eixo Y
-
-Se commando = LLM
-direção = OESTE depois direção SUL + Se direção = SUL então y = y-1 
-commando é igual a 0 -1 0 SUL
-
 
 ## Entrada:
 
@@ -46,9 +32,6 @@ Os cientistas mandarão os comandos agrupados em uma única linha, como no exemp
 ```
 LMRDDMMUU
 ```
-Leste > m > norte > down > down > m > m > up > up
-1 2 0 NORTE
-
 ## Saída:
 
 A saída deverá conter a coordenada final do submarino junto com sua direção, como no exemplo:
