@@ -1,4 +1,3 @@
-
 .idea/
 env/
 .settings/
@@ -7,3 +6,4 @@ env/
 .classpath
 env/Scripts/pip.exe
 .vscode/settings.json
+java/.vscode/settings.json
