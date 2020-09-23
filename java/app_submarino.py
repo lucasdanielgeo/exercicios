@@ -1,6 +1,9 @@
 class Submarino:
     def __init__(self, x=0, y=0, z=0, direction='NORTE'):
-        self.x, self.y, self.z, self.direction = x, y, z, direction
+        self.x = x
+        self.y = y
+        self.z = z
+        self.direction = direction
         self.direction_list = ['NORTE','LESTE','SUL','OESTE']
 
     def get_current_position(self):
@@ -16,13 +19,6 @@ class Submarino:
 
 direction = Submarino().direction_list
 
-# def create_submarine():
-#     print('Your submarine is initialized!')
-#     return Submarino()
-
-# sub = create_submarine()
-
-# Essa função retorna o comando
 def split_command(command):
     command = command.upper()
     return [char for char in command]
