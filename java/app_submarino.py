@@ -14,9 +14,7 @@ class Submarino:
         direction_idx_direction_list = self.direction_list.index(self.direction)
         return self.direction_list[(direction_idx_direction_list + 1) % len(self.direction_list)]
 
-sub = Submarino()
-
-direction = sub.direction_list
+direction = Submarino().direction_list
 
 # def create_submarine():
 #     print('Your submarine is initialized!')
@@ -33,10 +31,7 @@ def send_command(command):
     command = split_command(command)
     return command
 
-
-command = send_command('RMMLMMMDDLL')
-
-def do_command(command, Submarino):
+def move_submarine(command, Submarino):
     for i in command:
         if i == 'M' and Submarino.direction == 'NORTE':
             Submarino.y += 1
@@ -53,10 +48,10 @@ def do_command(command, Submarino):
         elif i == 'U':
             Submarino.z += 1
         elif i == 'D':
-            Submarino.z -= 1
+            Submarino.z -= 1    
         else:
             pass
+    if Submarino.z >= 1:
+        print('O submarino não pode passar do nível do mar') 
+        Submarino.z = 0 
     return Submarino
-
-do_command(command, sub)
-print (sub.get_current_position())
